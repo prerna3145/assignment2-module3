@@ -1,0 +1,158 @@
+\documentclass{article}
+\usepackage{geometry}
+\geometry{
+  margin=1in, % Adjust margin as needed
+}
+
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\author{}
+\date{}
+
+\begin{document}
+
+\textbf{Introduction:}
+
+``Diamonds'' is an entertaining game where players bid to gather
+valuable diamond cards for points. We're teaching GenAI the rules of
+Diamonds, guiding it to develop logical strategies for gameplay. This
+details our process of instructing GenAI to play Diamonds and improve
+its bidding strategies gradually. Our aim is to enhance GenAI's
+proficiency in Diamonds, thereby making gameplay more enjoyable. Through
+step-by-step improvements, we're working towards making GenAI learn
+strategic bidding and ultimately improving the overall experience of
+playing Diamonds. In this process, we delve into the complexity of the
+game, breaking down each aspect to aid GenAI's learning. By analyzing
+past games and outcomes, we refine GenAI's decision-making processes,
+ensuring it becomes a competitive opponent. With dedication and
+patience, we're paving the way for GenAI to become good at this game of
+Diamonds, creating exciting and challenging gameplay for players.
+
+\textbf{Problem Statement:}
+-Developing strategies for the bidding card game
+`Diamonds' with GenAI It is a card game where players bid to collect
+valuable diamond cards for points. Each diamond card has a score.
+Players bid with cards from their hand. The one with the highest bid
+wins the diamond card. The player with the most points at the end wins.
+
+\textbf{Teaching GenAI the game:}
+First of we'll have to start explaining the basics of this game, In Diamonds, players bid to collect diamond cards for points. Cards are distributed evenly. Bidding involves using cards from your hand. The highest bidder wins the diamond card. Points are added at the end to determine the winner.
+ 
+1 Distribution
+(i)Keeping diamonds aside:Remove the 13 diamond cards
+from the deck and set them aside before distributing the remaining cards
+among players. This ensures fair gameplay without diamonds initially.
+(ii)First take out the diamond cards. Then, split the remaining deck
+into two parts. Each player gets all the cards from one suit---like
+spades, hearts, or clubs. This way, everyone has a whole suit to use
+during the game which ensures fairness.
+
+2. Gameplay To begin, shuffle
+the diamond cards and select one. Player one bids using their judgement
+of diamond card values. Player two follows, unaware of player one's bid,
+using cards from their hand. After bidding, the highest bidder claims
+the diamond. This process repeats for each round. It's a test of
+strategy and estimation. The player with the most diamonds, and thus
+points, wins. The value of the cards is based upon the series:
+2\textless3\textless4\textless5\textless6\textless7\textless8\textless9\textless T\textless J\textless Q\textless K\textless A
+
+For example,
+-the card diamond card for first round is 5 
+-player 1 has suit of spades and player 2 has hearts 
+-let us suppose player 1 bids with 5 of spades and player 2 bids 7 of hearts 
+-winner is player 2, gets the diamond card along with a score of 5
+
+\textbf{Iterating upon strategies}:
+Below our some strategies that GenAI and I came up with:
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Value-based bidding} Always bid with the highest-valued card
+  in your hand, especially when you believe it's likely to win the
+  diamond card, we've to use the highest value so that we can get the
+  diamond. Also is we're feeling like that our card is not the strongest
+  and we're likely to loose the round, we shall use the lower value
+  cards.
+\item
+  \textbf{Observation} Pay attention to your opponent's bidding patterns
+  and adjust your strategy accordingly. If they consistently bid high,
+  you might want to conserve your higher-valued cards for rounds where
+  you have a stronger chance of winning.
+\item
+  \textbf{Risk assessment} Assess the risk of bidding high for a diamond
+  card versus potentially losing points. It might be worth bidding
+  conservatively on certain cards to avoid splitting points or losing
+  out on other rounds.
+\end{enumerate}
+
+\textbf{Analysis and Conclusion Teaching GenAI:}
+``Diamonds'' involves a step-by-step approach, beginning with understanding the game's basics,
+including card distribution and gameplay mechanics. By implementing
+strategies like value-based bidding, observation, and risk assessment,
+GenAI develops decision-making abilities. Through iterative learning and
+analysis of past games, GenAI refines its tactics, gradually improving
+its proficiency in the game. This process not only enhances GenAI's
+gameplay experience but also contributes to the overall enjoyment for
+players.The game becomes more interesting as the computer adapts its
+strategy based on what's happening in the game. To win, we need to mix
+our bids wisely, adjust to changes, and guess what your opponent might
+do next. It's not just about luck, it's about strategy and being one
+step ahead of computer. By combining these tactics, we can increase our
+chances of winning and have more fun playing the game!
+
+\end{document}
+
+
+\begin{document}
+
+% Your document content here
+
+\end{document}
